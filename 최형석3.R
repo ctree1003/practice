@@ -6,7 +6,7 @@ Regdata <- read.table("C:/Users/student/Downloads/RegData.txt", header = T)
 set.seed(1809)
 Regdata <- subset(Regdata, select = -ID)
 
-sam <- sample(x=c("train","test"), size=nrow(Regdata), replace=T, prob = c(0.7,0.3))
+sam <- sample(x=c("train","test"), size=nrow(Regdata), replace=T, prob = c(0.7,0.3)) #7:3으로 train, test로 나누는 
 train <- Regdata[sam=="train",]
 test <- Regdata[sam=="test",]
 set.seed(1809)
