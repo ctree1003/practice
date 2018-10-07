@@ -15,8 +15,11 @@ purchase <- fread("D:/R/02.txt", header = T, sep = ",")
 product <- read.table("D:/R/03.txt", header = T, sep = ",", stringsAsFactors = F,
                       col.names = c("co.com", "big.code", "mid.code", "small.code",
                                     "mid.name", "small.name"))
-
-table(demo$location)#서울 지역인원 확인 100이하는 서울인원
+table(demo$location)
 demo1 <- demo #복사본 생성
 demo1 <- subset(demo, location <= 99) #서울 지역인원만 추출
 demo1 #확인
+
+str(purchase)
+
+purchase$구매일자 <- as.Date(paste(purchase$구매일자), format("%Y%m%d")) #int형이였던 구매일자 date형으로 변환
